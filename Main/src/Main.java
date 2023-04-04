@@ -2,17 +2,22 @@ import java.util.Scanner;
 
 
 class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите выражение: ");
+        String expr = scanner.nextLine();
+        expr = expr.replaceAll("\\s", "");
+        System.out.println(calc(expr));
+    }
+    
 
-    public static String calc(String input) {
+    public static String calc(String expr) {
 
         int result;
         String resultStr = "";
         String[] mathSymbol = {"+", "-", "/", "*"};
         String[] regexMathSymbol = {"\\+", "-", "/", "\\*"};
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите выражение: ");
-        String expr = scanner.nextLine();
-        expr = expr.replaceAll("\\s", "");
+        
     
     
         int mathSymbolIndex=-1;
